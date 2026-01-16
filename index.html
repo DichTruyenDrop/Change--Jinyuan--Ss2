@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Dichtruyendrop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#121212;
+    color:#fff;
+}
+
+/* HEADER */
+header{
+    background:#1e1e1e;
+    padding:12px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+header h1{
+    font-size:18px;
+    margin:0;
+}
+header h1 a{
+    color:#ff9800;
+    text-decoration:none;
+}
+.search-box{flex:1}
+.search-box input{
+    width:100%;
+    padding:8px;
+    border-radius:4px;
+    border:none;
+}
+
+/* CONTENT */
+.container{padding:12px}
+.story-card{
+    background:#1c1c1c;
+    border-radius:8px;
+    padding:12px;
+}
+.story-cover{
+    width:100%;
+    max-height:400px;
+    object-fit:cover;
+    border-radius:8px;
+}
+.story-title{
+    font-size:20px;
+    margin:10px 0;
+    color:#ff9800;
+}
+.story-info{
+    font-size:14px;
+    opacity:.8;
+    margin-bottom:10px;
+}
+
+/* BUTTON */
+.buttons{
+    display:flex;
+    gap:10px;
+    margin-bottom:12px;
+}
+.btn{
+    flex:1;
+    padding:10px;
+    border-radius:6px;
+    border:none;
+    font-size:14px;
+    cursor:pointer;
+}
+.btn-read{background:#4caf50;color:#fff}
+.btn-continue{background:#2196f3;color:#fff}
+
+/* MÔ TẢ */
+.story-desc{
+    background:#222;
+    padding:12px;
+    border-radius:6px;
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:12px;
+}
+.story-desc-title{
+    text-align:center;
+    font-weight:bold;
+    color:#4fc3f7;
+    cursor:pointer;
+}
+.story-desc-title:before,
+.story-desc-title:after{
+    content:"";
+    display:block;
+    height:1px;
+    background:#4fc3f7;
+    margin:6px 0;
+}
+
+/* DANH SÁCH CHAP */
+.chapter-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:10px;
+}
+.chapter-header input{
+    background:#222;
+    border:none;
+    color:#fff;
+    padding:6px;
+    border-radius:4px;
+    width:110px;
+}
+.chapter-list{
+    max-height:300px;
+    overflow-y:auto;
+}
+.chapter{
+    background:#222;
+    padding:10px;
+    border-radius:6px;
+    margin-bottom:8px;
+}
+.chapter a{
+    display:flex;
+    justify-content:space-between;
+    text-decoration:none;
+    color:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>
+        <a href="https://dichtruyendrop.github.io/DichTruyenDrop/" target="_blank">Dichtruyendrop</a>
+    </h1>
+    <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm truyện...">
+    </div>
+</header>
+
+<div class="container">
+<div class="story-card">
+
+<img class="story-cover" src="change-jinyuan-ss2-1724790450.jpg">
+
+<div class="story-title">
+Change (Jinyuan) Ss2
+</div>
+
+<div class="story-info">
+Trạng thái: Đang cập nhật • Lượt xem: 292,429
+</div>
+
+<div class="buttons">
+    <button class="btn btn-read" onclick="location.href='https://dichtruyendrop.github.io/change-jinyuan-ss2-chap-62-1.html/'">
+        📖 Đọc từ 62.2
+    </button>
+    <button class="btn btn-continue" onclick="docTiep()">
+        ▶️ Kênh Tik Tok
+    </button>
+</div>
+
+<!-- MÔ TẢ -->
+<div class="story-desc">
+    <div class="story-desc-title" onclick="toggleDesc()">MÔ TẢ 🔽</div>
+    <div id="desc-content">
+        Change (Jinyuan) Ss2.                                                            
+        Tiếp nối phần 1 của Change (JinYuan)
+    </div>
+</div>
+
+<!-- DANH SÁCH CHAP -->
+<div class="chapter-header">
+    <div>📚 Danh sách chương</div>
+    <input type="text" placeholder="🔍 Tìm chap" onkeyup="timChap(this.value)">
+</div>
+
+<div class="chapter-list">
+        
+    <div class="chapter"><a href="https://dichtruyendrop.github.io/change-jinyuan-ss2-chap-62-2.html/"><span>Chương 62.2</span><span>16/1/2026</span></a></div>
+</div>
+
+</div>
+</div>
+
+<script>
+function toggleDesc(){
+    const d = document.getElementById("desc-content");
+    d.style.display = d.style.display === "none" ? "block" : "none";
+}
+
+function timChap(value){
+    value = value.toLowerCase();
+    document.querySelectorAll(".chapter").forEach(c=>{
+        c.style.display = c.innerText.toLowerCase().includes(value)
+            ? "block" : "none";
+    });
+}
+
+// 🔥 ĐỌC TIẾP
+function docTiep(){
+    const chap = localStorage.getItem("lastChap");
+    if(chap){
+        window.location.href = "https://www.tiktok.com/@dichtruyendrop?_r=1&_t=ZS-92gWXYwbDMI" + chap + "/";
+    }else{
+        alert("Bạn chưa đọc chap nào 😅");
+    }
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
